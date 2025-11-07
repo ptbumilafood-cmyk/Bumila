@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BUMILA FOOD - Makanan Beku Berkualitas</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+  html, body {
+    overflow-x: hidden;
+    width: 100%;
+  }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #f9f9f9, #e6f7ff);
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(90deg, #1E90FF, #2f9dcf);
+            color: white;
+            padding: 20px 0;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+    .logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo-img {
+  width: 30px;
+  height: 30px;
+  object-fit: contain;
+  border-radius: 50%;
+  background: white;
+  padding: 5px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+        .logo h1 {
+            font-size: 28px;
+            margin-left: 15px;
+            font-weight: 700;
+        }
+
+        .logo-icon {
+            font-size: 32px;
+            background: white;
+            color: #red;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 25px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 18px;
+            padding: 8px 15px;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            background: rgba(255,255,255,0.2);
+            transform: translateY(-2px);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1606755962773-d324e0a13086?q=80&w=1000') center/cover;
+            height: 500px;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: white;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .hero h2 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 22px;
+            margin-bottom: 30px;
+        }
+
+        .btn {
+            display: inline-block;
+            background: #0000FF;
+            color: white;
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 18px;
+            transition: all 0.3s ease;
+        }
+
+        .btn:hover {
+            background: #0000FF;
+            transform: translateY(-3px);
+        }
+
+        /* Section */
+        section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-title h2 {
+            font-size: 36px;
+            color: #00BFFF;
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: #1E90FF;
+            border-radius: 2px;
+        }
+
+      
+        /* Section Styles */
+        section {
+            padding: 80px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .section-title h2 {
+            font-size: 36px;
+            color: #3112e4;
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: #1327d8;
+            border-radius: 2px;
+        }
+        
+        .section-title p {
+            font-size: 18px;
+            color: #666;
+            max-width: 700px;
+            margin: 20px auto 0;
+        }
+        
+
+        /* Product Grid */
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+        }
+
+        .product-img img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .product-card:hover .product-img img {
+            transform: scale(1.05);
+        }
+
+        .product-info {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .product-info h3 {
+            font-size: 22px;
+            margin-bottom: 10px;
+            color: #00008B;
+        }
+
+        .product-info p {
+            color: #666;
+        }
+
+        /* Footer */
+        footer {
+            background: linear-gradient(90deg, #2c3e50, #1a2530);
+            color: white;
+            padding: 60px 0 30px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+                /* Team Section */
+        .team-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .team-member {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+        
+        .team-member:hover {
+            transform: translateY(-10px);
+        }
+        
+        .member-img {
+            height: 220px;
+            background: #blue;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 80px;
+        }
+        
+        .member-info {
+            padding: 25px 20px;
+        }
+        
+        .member-info h3 {
+            font-size: 24px;
+            margin-bottom: 8px;
+            color: #333;
+        }
+        
+        .member-info .position {
+            color: #00BFFF;
+            font-weight: 600;
+            margin-bottom: 15px;
+            font-size: 18px;
+        }
+        
+        .member-info p {
+            color: #666;
+            font-style: italic;
+        }
+        .footer-column h3 {
+            font-size: 22px;
+            margin-bottom: 25px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: #00BFFF;
+        }
+        
+        .contact-info p {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .contact-info i {
+            margin-right: 12px;
+            color: #00BFFF;
+            font-size: 18px;
+        }
+        
+        .social-links {
+            display: flex;
+            margin-top: 20px;
+        }
+        
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            border-radius: 50%;
+            margin-right: 10px;
+            transition: all 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            background: #00BFFF;
+            transform: translateY(-3px);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 16px;
+            color: #aaa;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .logo {
+                margin-bottom: 20px;
+            }
+            
+            nav ul {
+                justify-content: center;
+            }
+            
+            nav ul li {
+                margin: 0 10px;
+            }
+            
+            .hero h2 {
+                font-size: 36px;
+            }
+            
+            .hero p {
+                font-size: 18px;
+            }
+        }
+        }
+        
+    </style>
+</head>
+<body>
+
+<header>
+       <div class="container header-content">
+           <img src="L.png" width="120px">
+            <h1>BUMILA FOOD</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#">Beranda</a></li>
+                <li><a href="#products">Produk</a></li>
+                <li><a href="#team">Tim</a></li>
+                <li><a href="#contact">Kontak</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<section class="hero">
+    <div class="hero-content">
+        <h2>Makanan Beku Berkualitas Premium</h2>
+        <p>Nikmati cita rasa autentik dengan kualitas terbaik dari bahan pilihan</p>
+        <a href="#products" class="btn">Lihat Produk Kami</a>
+    </div>
+</section>
+
+<section id="products">
+    <div class="container">
+        <div class="section-title">
+            <h2>Produk Kami</h2>
+            <p>Berbagai macam produk makanan beku berkualitas tinggi dengan cita rasa terbaik</p>
+        </div>
+
+        <div class="products-grid">
+            <div class="product-card">
+                <div class="product-img">
+                    <img src="K.jpg" alt="Kentang Goreng">
+                </div>
+                <div class="product-info">
+                    <h3>Kentang Goreng</h3>
+                    <p>Kentang goreng renyah dengan rasa gurih alami, cocok untuk segala suasana.</p>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-img">
+                    <img src="S.jpg" alt="Sosis">
+                </div>
+                <div class="product-info">
+                    <h3>Sosis</h3>
+                    <p>Sosis sapi dan ayam pilihan dengan cita rasa lezat dan tanpa pengawet berbahaya.</p>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-img">
+                    <img src="N.jpg" alt="Nugget Ayam">
+                </div>
+                <div class="product-info">
+                    <h3>Nugget Ayam</h3>
+                    <p>Nugget ayam premium yang renyah di luar dan lembut di dalam.</p>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-img">
+                    <img src="B.jpg" alt="Bakso Sapi">
+                </div>
+                <div class="product-info">
+                    <h3>Bakso Sapi</h3>
+                    <p>Bakso sapi kenyal dan gurih dari daging sapi pilihan, cocok untuk segala masakan.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Tentang Perusahaan -->
+
+<section id="about">
+
+<div class="container about">
+
+<div class="section-title">
+
+<h2>Tentang BUMILA FOOD</
+
+h2>
+
+</div>
+
+<center><h3>Sejarah Perusahaan</h3>
+
+<p> PT Bumila Food berdiri pada tahun 2025 sebagai produsen makanan beku yang berkomitmen menghadirkan produk berkualitas tinggi bagi masyarakat Indonesia.
+
+Berawal dari usaha rumahan kecil, Bumila Food terus berkembang dengan mengutamakan inovasi, kebersihan, dan cita rasa.
+
+Kini, Bumila Food telah menjadi salah satu penyedia produk olahan beku terpercaya di berbagai wilayah Indonesia.
+
+</p><center>
+
+<h3>Visi</h3>
+
+<p> Menjadi perusahaan makanan beku terdepan yang menghadirkan produk berkualitas tinggi, sehat, dan terpercaya di seluruh Indonesia.
+
+</p></center>
+<center><h3>Misi</h3></center>
+
+<ul>
+
+<li>Menghasilkan produk
+
+makanan beku yang higienis, lezat, dan bernilai gizi tinggi.</li>
+
+<li>Meningkatkan kepuasan
+
+pelanggan melalui pelayanan terbaik dan inovasi produk berkelanjutan.</li>
+
+<li>Mendukung
+
+kesejahteraan mitra dan karyawan melalui kerja sama yang adil dan beretika.</li>
+
+<li>Menjadi bagian dari gaya hidup sehat masyarakat
+
+Indonesia. </li>
+
+</ul>
+
+</div>
+
+</section>
+
+    <!-- Team Section -->
+    <section id="team" style="background-color: #f8f9fa;">
+        <div class="container">
+            <div class="section-title">
+                <h2>Struktur Jabatan</h2>
+                <p>Tim profesional yang berdedikasi untuk menghasilkan produk terbaik</p>
+            </div>
+            <div class="team-container">
+                <div class="team-member">
+                    <div class="image/amat.jpg"><i class="fas fa-user-tie"></i></div>
+                    <div class="member-info">
+                        <h3>Ahmad Daffa</h3>
+                        <div class="position">Direktur</div>
+                        <p>Memimpin perusahaan dengan visi dan strategi untuk pertumbuhan jangka panjang</p>
+                    </div>
+                </div>
+                
+                <div class="team-member">
+                    <div class="image/banyu.jpg"><i class="fas fa-user-cog"></i></div>
+                    <div class="member-info">
+                        <h3>Banyu Firdaus</h3>
+                        <div class="position">Manager</div>
+                        <p>Mengelola operasional perusahaan dan memastikan kualitas produk terbaik</p>
+                    </div>
+                </div>
+                
+                <div class="team-member">
+                    <div class="hafizi.jpg"><i class="fas fa-user"></i></div>
+                    <div class="member-info">
+                        <h3>M. Hafizi</h3>
+                        <div class="position">Staf Produksi</div>
+                        <p>Bertanggung jawab atas proses produksi dengan standar kualitas tertinggi</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Tentang Kami</h3>
+                    <p>BUMILA FOOD merupakan perusahaan makanan beku yang berkomitmen menyediakan produk berkualitas tinggi dengan cita rasa terbaik untuk keluarga Indonesia.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Kontak Kami</h3>
+                    <div class="contact-info">
+                        <p><i class="fas fa-map-marker-alt"></i> Jl. Jendral Sudirman No. 54, Jakarta pusat</p>
+                        <p><i class="fas fa-phone"></i> (021) 6617010</p>
+                        <p><i class="fas fa-envelope"></i> info@bumilafood.com</p>
+                        <p><i class="fas fa-clock"></i> Senin - Jumat: 08:00 - 17:00</p>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Produk Unggulan</h3>
+                    <ul style="list-style: none; color: #ccc;">
+                        <li style="margin-bottom: 10px;"><i class="fas fa-check" style="color: #e74c3c;"></i> Nugget Ayam Premium</li>
+                        <li style="margin-bottom: 10px;"><i class="fas fa-check" style="color: #e74c3c;"></i> Sosis Sapi Ekonomis</li>
+                        <li style="margin-bottom: 10px;"><i class="fas fa-check" style="color: #e74c3c;"></i> Bakso Sapi Spesial</li>
+                        <li style="margin-bottom: 10px;"><i class="fas fa-check" style="color: #e74c3c;"></i> Kentang Goreng Renyah</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2025 BUMILA FOOD. Hak Cipta Dilindungi. Website dibuat dengan penuh cinta untuk makanan beku.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
